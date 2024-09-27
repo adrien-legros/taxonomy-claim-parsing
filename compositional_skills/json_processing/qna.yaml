@@ -1,0 +1,257 @@
+version: 2
+task_description: Parse claimer email to JSON
+created_by: FR-AI-SSA-TEAM
+seed_examples:
+  - context: |
+      Dear AssuranceCare Inc.,
+
+      I hope this email finds you well. I''m writing to, uh, inform you about, well, something that happened recently.
+      It''s, um, about a car accident, and I''m not really sure how to, you know, go about all this.
+      I''m kinda anxious and confused, to be honest.
+      So, the accident, uh, occurred on January 15, 2024, at around 3:30 PM.
+      I was driving, or, um, attempting to drive, my car at the intersection of Maple Street and Elm Avenue.
+      It''s kinda close to, um, a gas station and a, uh, coffee shop called Brew Haven?
+      I''m not sure if that matters, but, yeah.
+      So, I was just, you know, driving along, and suddenly, out of nowhere, another car,
+      a Blue Crest Sedan, crashed into the, uh, driver''s side of my car. It was like, whoa, what just happened,
+      you know? There was this screeching noise and, uh, some honking from other cars, and I just felt really,
+      uh, overwhelmed.
+
+      The weather was, um, kinda cloudy that day, but I don''t think it was raining.
+      I mean, I can''t really remember. Sorry if that''s important. Anyway, the road, or, well, maybe the intersection,
+       was kinda busy, with cars going in different directions. I guess that''s, you know, a detail you might need?
+
+      As for damages, my car has, uh, significant damage on the driver''s side. The front door is all dented,
+      and the side mirror is, like, hanging by a thread. It''s not really drivable in its current, uh, state.
+      The Blue Crest Sedan also had some damage, but I''m not exactly sure what because, you know,
+      everything happened so fast.
+
+      I did manage to exchange information with the other driver. Their name is Sarah Johnson,
+      and I got their phone number (555-1234), license plate number (ABC123), and insurance information.
+      So, yeah, I hope that''s helpful.
+
+      I''m not sure what, um, steps I should take now. Do I need to go to a specific, uh, repair shop?
+      Should I get a quote for the repairs? And, uh, how do I, you know, proceed with the insurance claim?
+      I''m kinda lost here, and any guidance or assistance you can provide would be really, um, appreciated.
+
+      Sorry if this email is a bit all over the place. I''m just really, uh, anxious about the whole situation.
+      Thank you for your understanding.
+
+      Sincerely,
+
+      Jane Doe
+      Policy Number: AC987654
+      ');
+    question: "Parse this claim to JSON."
+    answer: |
+      {
+        "sender": "Jane Doe",
+        "sentiment": "anxious, confused",
+        "date_of_event": "2024-01-15",
+        "location_of_event": "Intersection of Maple Street and Elm Avenue",
+        "policy_number" : "AC987654",
+        "type": "car crash",
+        "summary": "Jane Doe reports a car accident on January 15, 2024, at Maple Street and Elm Avenue.
+        Her car was hit by a Blue Crest Sedan, causing damage.
+        She feels anxious and seeks guidance on filing a claim."
+      }
+  - context: |
+      Dear Prestige Insurances,
+
+      I am writing to express my extreme dissatisfaction with the appalling service
+      I have received concerning my recent claim, reference number #XYZ789.
+      The lack of communication and delayed response from your company is utterly unacceptable,
+      and I demand immediate attention to rectify this matter.
+
+      The accident occurred on January 15, 2024, at approximately 3:45 PM,
+      near the intersection of Maple Street and Oak Avenue in Rivertown.
+      My vehicle, a Silver Hawk GT, was struck by another driver, identified as Samantha Reynolds,
+      who ran a red light at the aforementioned intersection.
+      This incident resulted in substantial damage to the front end of my car,
+      including severe structural damage and airbag deployment.
+
+      I reported the claim immediately after the accident, providing all necessary details, witness information,
+      and a detailed description of the events leading up to the collision.
+      However, the response—or lack thereof—from your company has been absolutely deplorable.
+      I have yet to receive any updates on the status of my claim,
+      and my attempts to contact your claims department have been met with prolonged
+      hold times and unhelpful representatives.
+
+      I insist on a thorough investigation into this matter and demand an explanation for the unreasonable delay.
+      It is my right as a policyholder to receive timely updates on the progress of my claim and to be treated
+      with the respect and urgency that this situation demands.
+
+      Furthermore, the lack of transparency and communication from your company is not only unprofessional but
+       also exacerbates the stress and inconvenience caused by the accident itself. I expect immediate action to
+       be taken to expedite the processing of my claim and provide me with the information
+       I am entitled to as a paying customer.
+
+      I am appalled at the disregard for customer satisfaction and the apparent negligence
+      displayed by your company in handling my claim. If my concerns are not addressed promptly and to
+      my satisfaction, I will have no choice but to escalate this matter to the
+      appropriate regulatory authorities and consider legal action.
+
+      I demand a comprehensive update on the status of my claim within the next 48 hours.
+      Failing to meet this deadline will only reinforce my belief that your company values its bottom
+      line over the well-being of its customers.
+
+      I trust that you will treat this matter with the urgency and seriousness it deserves.
+
+      Sincerely,
+      John T. Anderson
+      Policy Number: PT567890
+    question: "Parse this claim to JSON."
+    answer: |
+      {
+        "sender": "John T. Anderson",
+        "sentiment": "extremely dissatisfied, frustrated, demanding",
+        "date_of_event": "2024-01-15",
+        "location_of_event": "Intersection of Maple Street and Oak Avenue in Rivertown",
+        "policy_number" : "PT567890",
+        "type": "car crash",
+        "summary": "John T. Anderson expresses dissatisfaction with the delayed response to his claim (#XYZ789) 
+        after a January 15, 2024 accident at Maple and Oak in Rivertown. He demands immediate action, 
+        citing poor communication and negligence."
+      }
+  - context: |
+      Dear AssuranceCare Inc.,
+
+      I hope this email finds you well. I''m writing to, uh, inform you about, well, something that happened recently.
+      It''s, um, about a car accident, and I''m not really sure how to, you know, go about all this.
+      I''m kinda anxious and confused, to be honest.
+
+      So, the accident, uh, occurred on January 15, 2024, at around 3:30 PM. I was driving, or,
+      um, attempting to drive, my car at the intersection of Maple Street and Elm Avenue.
+      It''s kinda close to, um, a gas station and a, uh, coffee shop called Brew Haven?
+      I''m not sure if that matters, but, yeah.
+
+      So, I was just, you know, driving along, and suddenly, out of nowhere, another car, a Blue Crest Sedan,
+      crashed into the, uh, driver''s side of my car. It was like, whoa, what just happened, you know?
+      There was this screeching noise and, uh, some honking from other cars, and I just felt really, uh, overwhelmed.
+
+      The weather was, um, kinda cloudy that day, but I don''t think it was raining.
+      I mean, I can''t really remember. Sorry if that''s important.
+      Anyway, the road, or, well, maybe the intersection, was kinda busy, with cars going in different directions.
+      I guess that''s, you know, a detail you might need?
+
+      As for damages, my car has, uh, significant damage on the driver''s side. The front door is all dented,
+      and the side mirror is, like, hanging by a thread. It''s not really drivable in its current, uh, state.
+      The Blue Crest Sedan also had some damage, but I''m not exactly sure what because, you know,
+      everything happened so fast.
+
+      I did manage to exchange information with the other driver. Their name is Sarah Johnson,
+      and I got their phone number (555-1234), license plate number (ABC123), and insurance information.
+      So, yeah, I hope that''s helpful.
+
+      I''m not sure what, um, steps I should take now. Do I need to go to a specific, uh, repair shop?
+      Should I get a quote for the repairs? And, uh, how do I, you know, proceed with the insurance claim?
+      I''m kinda lost here, and any guidance or assistance you can provide would be really, um, appreciated.
+
+      Sorry if this email is a bit all over the place. I''m just really, uh, anxious about the whole situation.
+      Thank you for your understanding.
+
+      Sincerely,
+
+      Jane Doe
+      Policy Number: AC987654
+    question: "Parse this claim to JSON."
+    answer: |
+      {
+        "sender": "Jane Doe",
+        "sentiment": "anxious and confused",
+        "date_of_event": "January 15, 2024, around 3:30 PM",
+        "location_of_event": "Intersection of Maple Street and Elm Avenue",
+        "policy_number" : "AC987654",
+        "type": "car crash",
+        "summary": "Jane Doe reports a car accident on January 15, 2024, at Maple Street and Elm Avenue. 
+        Her car was hit by a Blue Crest Sedan, causing damage. 
+        She feels anxious and confused, seeking guidance on how to proceed."
+      }
+  - context: |
+      Subject: Claim Assistance Request
+
+      Dear Claim Support,
+
+      I hope you're doing well. I need help regarding a recent incident.
+      On September 20, 2024, at 2:00 PM,
+      my car was involved in a minor accident at the corner of 5th Avenue and Pine Street.
+      Another vehicle sideswiped mine, damaging the passenger door.
+
+      I’ve exchanged details with the other driver and would appreciate your guidance on how to proceed with the claim.
+
+      Thank you for your assistance.
+
+      Best regards,
+      Michael Lee
+      Policy Number: CL123456
+    question: "Parse this claim to JSON."
+    answer: |
+      {
+        "sender": "Michael Lee",
+        "sentiment": "calm and seeking assistance",
+        "date_of_event": "September 20, 2024, at 2:00 PM",
+        "location_of_event": "Corner of 5th Avenue and Pine Street",
+        "policy_number" : "CL123456",
+        "type": "car crash",
+        "summary": "Michael Lee requests assistance with a claim for a minor car accident on September 20, 2024, 
+        at 5th Avenue and Pine Street. His passenger door was damaged, and he seeks guidance on how to proceed."
+      }
+  - context: |
+      Subject: Inquiry About Recent Incident
+
+      Dear Customer Support,
+
+      I hope this message finds you well.
+      I am writing to discuss an unfortunate incident that took place on November 10, 2024,
+      at approximately 4:00 PM. While at the community park,
+      I tripped over a broken sidewalk and sustained a minor injury.
+
+      I would like to understand the next steps for filing a claim and
+      any necessary documentation you may require from me.
+
+      Thank you for your help.
+
+      Best,
+      Tom Harris
+      Policy Number: TH456789
+    question: "Parse this claim to JSON."
+    answer: |
+      {
+        "sender": "Tom Harris",
+        "sentiment": "concerned and seeking guidance",
+        "date_of_event": "November 10, 2024, at approximately 4:00 PM",
+        "location_of_event": "Community park",
+        "policy_number" : "TH456789",
+        "type": "injury",
+        "summary": "Tom Harris requests guidance on filing a claim after a minor injury from tripping over 
+        a broken sidewalk at a community park on November 10, 2024. 
+        He asks for the required documentation to proceed."
+      }
+  - context: |
+      Subject: Assistance Needed for Recent Incident
+
+      Hi Team,
+
+      I hope you’re well. I am reaching out regarding an incident that occurred on December 15, 2024,
+       at around 1:15 PM. While attending a local event at the downtown convention center,
+       I accidentally slipped and fell, resulting in a minor injury.
+
+      I would appreciate your guidance on how to proceed with a claim and any information needed from my side.
+
+      Thank you for your support.
+
+      Best regards,
+      Emma Johnson
+      Policy Number: EJ789012
+    question: "Parse this claim to JSON."
+    answer: |
+      {
+        "sender": "Emma Johnson",
+        "sentiment": "worried and requesting assistance",
+        "date_of_event": "December 15, 2024, at around 1:15 PM",
+        "location_of_event": "Downtown convention center",
+        "policy_number" : "EJ789012",
+        "type": "injury",
+        "summary": "Emma Johnson seeks assistance in filing a claim after a slip and fall accident at the downtown 
+        convention center on December 15, 2024, resulting in a minor injury. She requests guidance on the next steps."
+      }
