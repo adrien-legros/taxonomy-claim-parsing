@@ -109,8 +109,8 @@ seed_examples:
         "location_of_event": "Intersection of Maple Street and Oak Avenue in Rivertown",
         "policy_number" : "PT567890",
         "type": "car crash",
-        "summary": "John T. Anderson expresses dissatisfaction with the delayed response to his claim (#XYZ789) 
-        after a January 15, 2024 accident at Maple and Oak in Rivertown. He demands immediate action, 
+        "summary": "John T. Anderson expresses dissatisfaction with the delayed response to his claim (#XYZ789)
+        after a January 15, 2024 accident at Maple and Oak in Rivertown. He demands immediate action,
         citing poor communication and negligence."
       }
   - context: |
@@ -163,8 +163,8 @@ seed_examples:
         "location_of_event": "Intersection of Maple Street and Elm Avenue",
         "policy_number" : "AC987654",
         "type": "car crash",
-        "summary": "Jane Doe reports a car accident on January 15, 2024, at Maple Street and Elm Avenue. 
-        Her car was hit by a Blue Crest Sedan, causing damage. 
+        "summary": "Jane Doe reports a car accident on January 15, 2024, at Maple Street and Elm Avenue.
+        Her car was hit by a Blue Crest Sedan, causing damage.
         She feels anxious and confused, seeking guidance on how to proceed."
       }
   - context: |
@@ -193,7 +193,7 @@ seed_examples:
         "location_of_event": "Corner of 5th Avenue and Pine Street",
         "policy_number" : "CL123456",
         "type": "car crash",
-        "summary": "Michael Lee requests assistance with a claim for a minor car accident on September 20, 2024, 
+        "summary": "Michael Lee requests assistance with a claim for a minor car accident on September 20, 2024,
         at 5th Avenue and Pine Street. His passenger door was damaged, and he seeks guidance on how to proceed."
       }
   - context: |
@@ -223,8 +223,8 @@ seed_examples:
         "location_of_event": "Community park",
         "policy_number" : "TH456789",
         "type": "injury",
-        "summary": "Tom Harris requests guidance on filing a claim after a minor injury from tripping over 
-        a broken sidewalk at a community park on November 10, 2024. 
+        "summary": "Tom Harris requests guidance on filing a claim after a minor injury from tripping over
+        a broken sidewalk at a community park on November 10, 2024.
         He asks for the required documentation to proceed."
       }
   - context: |
@@ -252,6 +252,6 @@ seed_examples:
         "location_of_event": "Downtown convention center",
         "policy_number" : "EJ789012",
         "type": "injury",
-        "summary": "Emma Johnson seeks assistance in filing a claim after a slip and fall accident at the downtown 
+        "summary": "Emma Johnson seeks assistance in filing a claim after a slip and fall accident at the downtown
         convention center on December 15, 2024, resulting in a minor injury. She requests guidance on the next steps."
       }
